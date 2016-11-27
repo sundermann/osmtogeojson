@@ -10,6 +10,8 @@ this page is based on https://github.com/aaronlidman/osm-and-geojson (c)Aaron Li
     <script type="text/javascript" src="//code.jquery.com/jquery-1.10.1.min.js"></script>
     <script type="text/javascript" src="osmtogeojson.js"></script>
     <script type="text/javascript">
+        var features = {};
+        
         function toGeo(e) {
             e.preventDefault();
             var data = document.getElementById('osmxml').value || "<osm></osm>",
@@ -19,11 +21,12 @@ this page is based on https://github.com/aaronlidman/osm-and-geojson (c)Aaron Li
             } catch(e) {
                 data = JSON.parse(data);
             }
-            geojson = osmtogeojson(data);
+            geojson = osmtogeojson(data, {polygonFeatures: features});
             document.getElementById('geojson').value = JSON.stringify(geojson, null, 4);
             console.log(geojson);
         }
         $(function() {
+            $.getJSON('polygon-features.json', function(data) {features = data;})
             $("#toGeo").click(toGeo);
         });
     </script>
