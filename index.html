@@ -26,8 +26,7 @@ this page is based on https://github.com/aaronlidman/osm-and-geojson (c)Aaron Li
             console.log(geojson);
         }
         $(function() {
-            $.getJSON('polygon-features.json', function(data) {features = data;})
-            $("#toGeo").click(toGeo);
+            $.getJSON('polygon-features.json', function(data) {features = data; $("#toGeo").click(toGeo);})
         });
     </script>
 
