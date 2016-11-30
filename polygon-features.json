@@ -77,5 +77,6 @@
     "ruins": true,
     "area:highway": true,
     "craft": true,
-    "indoor": true
+    "indoor": true,
+    "level": true
 }
