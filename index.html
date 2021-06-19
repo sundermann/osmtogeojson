@@ -22,7 +22,7 @@ this page is based on https://github.com/aaronlidman/osm-and-geojson (c)Aaron Li
                 data = JSON.parse(data);
             }
             geojson = osmtogeojson(data, {polygonFeatures: features});
-            document.getElementById('geojson').value = JSON.stringify(geojson, null, 4);
+            document.getElementById('geojson').value = JSON.stringify(geojson);
             console.log(geojson);
         }
         $(function() {
