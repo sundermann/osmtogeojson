@@ -583,7 +583,6 @@ osmtogeojson = function( data, options ) {
           "id"   : pois[i].id,
           "tags" : pois[i].tags || {},
           "relations" : relsmap["node"][pois[i].id] || [],
-          "meta": build_meta_information(pois[i])
         },
         "geometry"   : {
           "type" : "Point",
@@ -891,7 +890,6 @@ osmtogeojson = function( data, options ) {
           "id"   : ways[i].id,
           "tags" : ways[i].tags || {},
           "relations" : relsmap["way"][ways[i].id] || [],
-          "meta": build_meta_information(ways[i])
         },
         "geometry"   : {
           "type" : way_type,
